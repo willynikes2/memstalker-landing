@@ -39,10 +39,13 @@ const tiers = [
   },
   {
     name: "Pro",
-    price: "$25",
+    price: "$12",
     priceDetail: "/mo",
+    originalPrice: "$25",
     highlight: true,
-    badge: "Most Popular",
+    badge: "Early Adopter — 52% off",
+    lockedIn: true,
+    spotsLeft: true,
     features: [
       "Everything in Starter",
       "Unlimited documents",
@@ -114,18 +117,35 @@ export default function Pricing() {
 
             <div className="mt-2">
               {tier.priceDetail ? (
-                <p>
-                  <span
-                    className={`text-3xl font-display font-bold ${
-                      tier.highlight ? "text-accent" : ""
-                    }`}
-                  >
-                    {tier.price}
-                  </span>
-                  <span className="text-text-secondary text-sm">
-                    {tier.priceDetail}
-                  </span>
-                </p>
+                <div>
+                  {"originalPrice" in tier && tier.originalPrice && (
+                    <span className="text-text-secondary text-sm line-through mr-2">
+                      {tier.originalPrice}/mo
+                    </span>
+                  )}
+                  <p>
+                    <span
+                      className={`text-3xl font-display font-bold ${
+                        tier.highlight ? "text-accent" : ""
+                      }`}
+                    >
+                      {tier.price}
+                    </span>
+                    <span className="text-text-secondary text-sm">
+                      {tier.priceDetail}
+                    </span>
+                  </p>
+                  {"lockedIn" in tier && tier.lockedIn && (
+                    <p className="text-accent/70 text-xs font-mono mt-1">
+                      Locked in forever
+                    </p>
+                  )}
+                  {"spotsLeft" in tier && tier.spotsLeft && (
+                    <p className="text-amber-400/80 text-xs font-mono mt-1">
+                      Only 500 spots
+                    </p>
+                  )}
+                </div>
               ) : (
                 <p className="text-2xl font-display font-bold">{tier.price}</p>
               )}

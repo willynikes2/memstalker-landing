@@ -15,7 +15,10 @@ export default function FinalCTA() {
 
         <WaitlistForm source="cta" className="mt-8 reveal reveal-delay-2" />
 
-        <p className="font-mono text-xs text-text-secondary mt-4 reveal reveal-delay-3">
+        <p className="font-mono text-sm text-accent/80 mt-4 reveal reveal-delay-3">
+          Lock in 52% off — limited to first 500 signups
+        </p>
+        <p className="font-mono text-xs text-text-secondary mt-2 reveal reveal-delay-3">
           No credit card required. Early access invites sent weekly.
         </p>
       </div>

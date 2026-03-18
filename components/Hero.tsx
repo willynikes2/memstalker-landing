@@ -138,6 +138,12 @@ export default function Hero() {
         {/* Email waitlist form */}
         <WaitlistForm source="hero" className="mb-6" />
 
+        {/* Early adopter urgency */}
+        <p className="font-mono text-sm text-accent/80 mb-4">
+          First 500 get Pro for $12/mo forever{" "}
+          <span className="text-text-secondary line-through">$25</span>
+        </p>
+
         {/* Micro-proof */}
         <p className="font-mono text-sm text-text-secondary flex items-center justify-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-accent/60" />

@@ -3,6 +3,7 @@ const INTEGRATIONS = ["Claude", "ChatGPT", "Gemini", "Cursor", "Windsurf"];
 const STATS = [
   { value: "200K+", label: "Reddit views" },
   { value: "97%", label: "Upvote ratio" },
+  { value: "500", label: "Early adopter spots" },
   { value: "Open Source", label: "Free forever tier" },
 ];
 
