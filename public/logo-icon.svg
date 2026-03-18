@@ -1,0 +1,5 @@
+<svg id="memstalker-icon" width="512" height="512" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="64" height="64" fill="#0a0a0a"/>
+<path d="M32 29L35 32L32 35L29 32Z" fill="#00FF41"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32 25L28 21H36L32 25ZM32 39L28 43H36L32 39ZM25 32L21 28V36L25 32ZM39 32L43 28V36L39 32ZM8 8H20V12H12V20H8V8ZM56 8H44V12H52V20H56V8ZM8 56H20V52H12V44H8V56ZM56 56H44V52H52V44H56V56Z" fill="white"/>
+</svg>
