@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Terminal from "./Terminal";
+import WaitlistForm from "./WaitlistForm";
 
 interface TerminalLine {
   text: string;
@@ -135,25 +136,12 @@ export default function Hero() {
         </p>
 
         {/* Email waitlist form */}
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto mb-6"
-        >
-          <input
-            type="email"
-            placeholder="you@company.com"
-            required
-            className="w-full sm:flex-1 bg-bg-elevated border border-[#21262d] rounded-lg px-4 py-3 text-text-primary font-body text-sm placeholder:text-text-secondary/60 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors"
-          />
-          <button type="submit" className="btn-glow whitespace-nowrap">
-            Get Early Access
-          </button>
-        </form>
+        <WaitlistForm source="hero" className="mb-6" />
 
         {/* Micro-proof */}
         <p className="font-mono text-sm text-text-secondary flex items-center justify-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-accent/60" />
-          116,000+ developers saw this on Reddit
+          200,000+ developers saw this on Reddit
         </p>
 
         {/* Terminal animation */}
