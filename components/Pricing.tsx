@@ -14,7 +14,7 @@ const tiers = [
     ],
     cta: {
       label: "View on GitHub \u2192",
-      href: "https://github.com/memstalker",
+      href: "https://github.com/willynikes2/knowledge-base-server",
       style: "outline" as const,
     },
   },

@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/memstalker"
+              href="https://github.com/willynikes2/knowledge-base-server"
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary hover:text-text-primary text-sm transition-colors"
@@ -44,7 +44,7 @@ export default function Footer() {
           <span className="text-text-tertiary text-xs">
             Powered by{" "}
             <a
-              href="https://github.com/memstalker/knowledge-base-server"
+              href="https://github.com/willynikes2/knowledge-base-server"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-text-primary transition-colors underline underline-offset-2"

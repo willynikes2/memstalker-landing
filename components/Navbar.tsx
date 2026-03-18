@@ -42,7 +42,7 @@ export default function Navbar() {
             Pricing
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/willynikes2/knowledge-base-server"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-text-secondary hover:text-text-primary transition-colors"
