@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Memstalker — Your AI Never Forgets",
     description:
       "Persistent memory for AI agents. One brain, every model, zero copy-paste. 8ms retrieval, self-learning loops, open source.",
-    creator: "@shawndanlabs",
+    creator: "@willynikes",
   },
   metadataBase: new URL("https://memstalker.com"),
   alternates: {
