@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
     <footer className="border-t border-border-subtle">
-      <div className="py-12 px-6 max-w-6xl mx-auto">
+      <div className="py-12 px-6 max-w-[1200px] mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center">
-            <span className="font-display font-bold text-lg">Memstalker</span>
+            <span className="font-display font-bold text-lg text-text-primary">Memstalker</span>
             <span className="text-text-secondary text-sm ml-4">
               Persistent memory for AI agents.
             </span>
@@ -38,10 +38,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-border-subtle pt-8 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <span className="text-text-secondary text-xs">
+          <span className="text-text-tertiary text-xs">
             Built by Shawn Daniel
           </span>
-          <span className="text-text-secondary text-xs">
+          <span className="text-text-tertiary text-xs">
             Powered by{" "}
             <a
               href="https://github.com/memstalker/knowledge-base-server"

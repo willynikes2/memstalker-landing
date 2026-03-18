@@ -16,7 +16,7 @@ export default function WaitlistForm({
   source = "landing",
   className = "",
   inputClassName = "",
-  buttonClassName = "btn-glow whitespace-nowrap",
+  buttonClassName = "btn-primary whitespace-nowrap",
   compact = false,
 }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
@@ -63,7 +63,7 @@ export default function WaitlistForm({
   if (status === "success") {
     return (
       <div className={`text-center ${className}`}>
-        <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-lg px-6 py-4">
+        <div className="inline-flex items-center gap-2 bg-accent-light border border-accent/20 rounded-lg px-6 py-4">
           <span className="text-accent text-xl">&#10003;</span>
           <div className="text-left">
             <p className="text-accent font-medium text-sm">{message}</p>
@@ -83,7 +83,7 @@ export default function WaitlistForm({
       <div className={`text-center ${className}`}>
         <div className="inline-flex items-center gap-2 bg-bg-elevated border border-border-subtle rounded-lg px-6 py-4">
           <span className="text-accent">&#10003;</span>
-          <p className="text-text-secondary text-sm">{message}</p>
+          <p className="text-text-primary text-sm">{message}</p>
         </div>
       </div>
     );
@@ -104,7 +104,7 @@ export default function WaitlistForm({
           disabled={status === "loading"}
           className={
             inputClassName ||
-            "w-full sm:flex-1 bg-bg-elevated border border-[#21262d] rounded-lg px-4 py-3 text-text-primary font-body text-sm placeholder:text-text-secondary/60 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-colors disabled:opacity-50"
+            "w-full sm:flex-1 bg-white border border-border-subtle rounded-lg px-4 py-3 text-text-primary font-body text-sm placeholder:text-text-tertiary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors disabled:opacity-50"
           }
         />
         <button

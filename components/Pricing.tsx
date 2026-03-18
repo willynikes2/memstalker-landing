@@ -43,7 +43,7 @@ const tiers = [
     priceDetail: "/mo",
     originalPrice: "$25",
     highlight: true,
-    badge: "Early Adopter — 52% off",
+    badge: "Early Adopter \u2014 52% off",
     lockedIn: true,
     spotsLeft: true,
     features: [
@@ -59,7 +59,7 @@ const tiers = [
     cta: {
       label: "Get Early Access",
       href: "#cta",
-      style: "glow" as const,
+      style: "primary" as const,
     },
   },
   {
@@ -91,42 +91,42 @@ export default function Pricing() {
         <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">
           pricing
         </span>
-        <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+        <h2 className="font-display text-3xl md:text-[3.5rem] font-bold mt-4 tracking-tight leading-tight">
           Start free. Scale when you&apos;re ready.
         </h2>
         <p className="text-text-secondary mt-4">No credit card required.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1200px] mx-auto mt-16">
         {tiers.map((tier, i) => (
           <div
             key={tier.name}
-            className={`relative p-8 reveal reveal-delay-${i + 1} ${
+            className={`relative p-8 rounded-xl reveal reveal-delay-${i + 1} ${
               tier.highlight
-                ? "pricing-highlight bg-bg-elevated"
-                : "glass-card"
+                ? "bg-white border-2 border-accent shadow-lg shadow-accent/10"
+                : "bg-white border border-border-subtle shadow-sm"
             }`}
           >
             {tier.badge && (
-              <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-bg text-xs font-bold px-3 py-1 rounded-full">
+              <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
                 {tier.badge}
               </span>
             )}
 
-            <h3 className="font-display font-semibold text-lg">{tier.name}</h3>
+            <h3 className="font-display font-semibold text-lg text-text-primary">{tier.name}</h3>
 
             <div className="mt-2">
               {tier.priceDetail ? (
                 <div>
                   {"originalPrice" in tier && tier.originalPrice && (
-                    <span className="text-text-secondary text-sm line-through mr-2">
+                    <span className="text-text-tertiary text-sm line-through mr-2">
                       {tier.originalPrice}/mo
                     </span>
                   )}
                   <p>
                     <span
                       className={`text-3xl font-display font-bold ${
-                        tier.highlight ? "text-accent" : ""
+                        tier.highlight ? "text-accent" : "text-text-primary"
                       }`}
                     >
                       {tier.price}
@@ -136,18 +136,18 @@ export default function Pricing() {
                     </span>
                   </p>
                   {"lockedIn" in tier && tier.lockedIn && (
-                    <p className="text-accent/70 text-xs font-mono mt-1">
+                    <p className="text-accent text-xs font-mono mt-1">
                       Locked in forever
                     </p>
                   )}
                   {"spotsLeft" in tier && tier.spotsLeft && (
-                    <p className="text-amber-400/80 text-xs font-mono mt-1">
+                    <p className="text-amber-600 text-xs font-mono mt-1">
                       Only 500 spots
                     </p>
                   )}
                 </div>
               ) : (
-                <p className="text-2xl font-display font-bold">{tier.price}</p>
+                <p className="text-2xl font-display font-bold text-text-primary">{tier.price}</p>
               )}
             </div>
 
@@ -166,8 +166,8 @@ export default function Pricing() {
             </ul>
 
             <div className="mt-8">
-              {tier.cta.style === "glow" ? (
-                <a href={tier.cta.href} className="btn-glow w-full block text-center">
+              {tier.cta.style === "primary" ? (
+                <a href={tier.cta.href} className="btn-primary w-full block text-center">
                   {tier.cta.label}
                 </a>
               ) : (

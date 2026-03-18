@@ -9,8 +9,8 @@ const STATS = [
 
 export default function SocialProof() {
   return (
-    <section className="border-y border-[#21262d] py-16 md:py-20">
-      <div className="reveal max-w-4xl mx-auto px-6 text-center">
+    <section className="border-y border-border-subtle py-16 md:py-20">
+      <div className="reveal max-w-[1200px] mx-auto px-6 text-center">
         {/* Integrations */}
         <p className="text-text-secondary text-sm mb-6">
           Trusted by developers building with
@@ -20,7 +20,7 @@ export default function SocialProof() {
           {INTEGRATIONS.map((name) => (
             <span
               key={name}
-              className="font-mono text-sm text-text-primary border border-[#21262d] rounded-full px-4 py-2 transition-colors hover:border-[#3d444d]"
+              className="font-mono text-sm text-text-primary border border-border-subtle rounded-full px-4 py-2 transition-colors hover:border-border-hover"
             >
               {name}
             </span>
@@ -28,10 +28,10 @@ export default function SocialProof() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16">
           {STATS.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-2xl font-display font-bold text-text-primary">
+              <p className="text-2xl font-display font-bold text-text-primary tracking-tight">
                 {stat.value}
               </p>
               <p className="text-sm text-text-secondary mt-1">{stat.label}</p>

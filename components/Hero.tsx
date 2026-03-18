@@ -18,7 +18,7 @@ const TERMINAL_LINES: TerminalLine[] = [
   },
   {
     text: "I don't have memory of previous conversations.",
-    className: "text-red-400/70",
+    className: "text-red-400",
     delay: 1500,
   },
   {
@@ -93,7 +93,7 @@ function TerminalAnimation() {
   }, [runSequence]);
 
   return (
-    <div className="mt-12 max-w-2xl mx-auto shadow-[0_0_60px_rgba(0,255,65,0.08)]">
+    <div className="mt-12 max-w-2xl mx-auto">
       <Terminal title="memstalker">
         <div className="space-y-1 font-mono text-sm leading-relaxed">
           {TERMINAL_LINES.slice(0, visibleLines).map((line, i) => (
@@ -111,42 +111,43 @@ function TerminalAnimation() {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background layers */}
-      <div className="bg-grid absolute inset-0" />
-      <div className="bg-gradient-radial absolute inset-0" />
-
       {/* Content */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-32 pb-20 text-center">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 pt-32 pb-20 text-center">
         {/* Version badge */}
-        <span className="inline-block font-mono text-accent text-sm border border-accent/30 rounded-full px-4 py-1.5 mb-8">
+        <span className="inline-block font-mono text-accent text-sm border border-accent/20 bg-accent-light rounded-full px-4 py-1.5 mb-8">
           v1.0 &mdash; Now in early access
         </span>
 
         {/* Headline */}
-        <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-text-primary mb-6">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[4.5rem] font-bold tracking-tight text-text-primary leading-[1.05] mb-6">
           Your AI agents
           <br />
           shouldn&apos;t forget.
         </h1>
 
         {/* Subheadline */}
-        <p className="font-body text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10">
+        <p className="font-body text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
           Memstalker gives every AI model persistent memory. One knowledge base.
           Every session. Zero copy-paste.
         </p>
 
         {/* Email waitlist form */}
-        <WaitlistForm source="hero" className="mb-6" />
+        <WaitlistForm
+          source="hero"
+          className="mb-6"
+          buttonClassName="btn-primary whitespace-nowrap"
+          inputClassName="w-full sm:flex-1 bg-white border border-border-subtle rounded-lg px-4 py-3 text-text-primary font-body text-sm placeholder:text-text-tertiary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors disabled:opacity-50"
+        />
 
         {/* Early adopter urgency */}
-        <p className="font-mono text-sm text-accent/80 mb-4">
+        <p className="font-mono text-sm text-accent mb-4">
           First 500 get Pro for $12/mo forever{" "}
-          <span className="text-text-secondary line-through">$25</span>
+          <span className="text-text-tertiary line-through">$25</span>
         </p>
 
         {/* Micro-proof */}
         <p className="font-mono text-sm text-text-secondary flex items-center justify-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-accent/60" />
+          <span className="inline-block w-2 h-2 rounded-full bg-accent/40" />
           200,000+ developers saw this on Reddit
         </p>
 

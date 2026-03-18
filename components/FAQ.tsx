@@ -38,12 +38,12 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="section-padding">
+    <section id="faq" className="section-padding bg-bg-elevated">
       <div className="text-center">
         <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">
           faq
         </span>
-        <h2 className="font-display text-3xl md:text-4xl font-bold mt-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 text-text-primary tracking-tight">
           Common questions.
         </h2>
       </div>

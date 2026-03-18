@@ -14,14 +14,15 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-bg-elevated/80 backdrop-blur-md" : "bg-transparent"
+        scrolled
+          ? "bg-white/80 backdrop-blur-md border-b border-border-subtle"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <div className="w-3 h-5 bg-accent rounded-sm animate-pulse" />
-          <span className="font-display font-bold text-xl text-text-primary">
+          <span className="font-display font-bold text-xl text-text-primary tracking-tight">
             Memstalker
           </span>
         </a>
@@ -53,7 +54,7 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#early-access"
-          className="bg-accent text-bg font-body font-semibold text-sm px-4 py-2 rounded-md hover:brightness-110 transition-all"
+          className="bg-accent text-white font-body font-semibold text-sm px-4 py-2 rounded-lg hover:bg-accent-dark transition-all"
         >
           Get Early Access
         </a>

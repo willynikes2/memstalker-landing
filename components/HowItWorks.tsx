@@ -15,22 +15,22 @@ const STEPS: StepProps[] = [
     body: "Link your Obsidian vault, upload files, or connect GitHub. Memstalker indexes everything with AI-powered classification.",
     codeLines: [
       { text: "memstalker ingest ./obsidian-vault", className: "text-text-primary" },
-      { text: "✓ 847 documents indexed", className: "text-accent" },
-      { text: "✓ AI summaries generated", className: "text-accent" },
-      { text: "✓ Full-text search ready", className: "text-accent" },
+      { text: "\u2713 847 documents indexed", className: "text-accent" },
+      { text: "\u2713 AI summaries generated", className: "text-accent" },
+      { text: "\u2713 Full-text search ready", className: "text-accent" },
     ],
     delay: 1,
   },
   {
     number: "02",
     title: "Connect your AI models",
-    body: "One command per model. Claude Code, ChatGPT, Gemini — all reading from the same brain.",
+    body: "One command per model. Claude Code, ChatGPT, Gemini \u2014 all reading from the same brain.",
     codeLines: [
-      { text: "# Claude Code", className: "text-text-secondary" },
+      { text: "# Claude Code", className: "text-text-tertiary" },
       { text: "claude mcp add memstalker -- npx memstalker-mcp", className: "text-text-primary" },
       { text: "", className: "" },
-      { text: "# ChatGPT — import Custom GPT Action", className: "text-text-secondary" },
-      { text: "# Gemini — add MCP config", className: "text-text-secondary" },
+      { text: "# ChatGPT \u2014 import Custom GPT Action", className: "text-text-tertiary" },
+      { text: "# Gemini \u2014 add MCP config", className: "text-text-tertiary" },
     ],
     delay: 2,
   },
@@ -40,8 +40,8 @@ const STEPS: StepProps[] = [
     body: "Your AI agents now share context. What Claude learns, ChatGPT remembers. Across every session, every model.",
     codeLines: [
       { text: '$ claude "continue the API refactor from yesterday"', className: "text-text-primary" },
-      { text: "✓ Found 3 relevant sessions", className: "text-accent" },
-      { text: "✓ Resuming from commit a3f8c2d...", className: "text-accent" },
+      { text: "\u2713 Found 3 relevant sessions", className: "text-accent" },
+      { text: "\u2713 Resuming from commit a3f8c2d...", className: "text-accent" },
     ],
     delay: 3,
   },
@@ -52,7 +52,7 @@ function Step({ number, title, body, codeLines, delay }: StepProps) {
     <div className={`reveal reveal-delay-${delay} flex gap-8 md:gap-12`}>
       {/* Step number */}
       <div className="flex-shrink-0">
-        <span className="font-display text-6xl font-bold text-accent/20 select-none">
+        <span className="font-display text-6xl font-bold text-accent/15 select-none">
           {number}
         </span>
       </div>
@@ -64,7 +64,7 @@ function Step({ number, title, body, codeLines, delay }: StepProps) {
         </h3>
         <p className="text-text-secondary mt-2 leading-relaxed">{body}</p>
 
-        <div className="bg-bg-surface rounded-lg p-4 mt-4 font-mono text-sm overflow-x-auto">
+        <div className="bg-bg-elevated border border-border-subtle rounded-lg p-4 mt-4 font-mono text-sm overflow-x-auto">
           {codeLines.map((line, i) =>
             line.text === "" ? (
               <div key={i} className="h-4" />
@@ -88,7 +88,7 @@ export default function HowItWorks() {
         <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">
           getting started
         </span>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-text-primary mt-4">
+        <h2 className="font-display text-3xl md:text-[3.5rem] font-bold text-text-primary mt-4 tracking-tight leading-tight">
           Three commands. Permanent memory.
         </h2>
       </div>
