@@ -9,18 +9,18 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     icon: "\u27f7",
-    title: "Multi-Model Memory",
-    body: "Claude, ChatGPT, and Gemini read from one brain. What one model learns, all models remember.",
+    title: "Bidirectional Teaching",
+    body: "You teach your AI with corrections and documentation. It teaches you back with ELI-5 explanations and pattern recognition. Both sides get smarter every session.",
   },
   {
     icon: "\u21bb",
-    title: "Self-Learning",
-    body: "Your AI auto-updates its own instructions after every session. It gets smarter without you doing anything.",
+    title: "Self-Learning Loops",
+    body: "Every mistake, correction, and fix gets captured with context. Your AI learns from failures and never repeats them. Intelligence that compounds.",
   },
   {
     icon: "\u25ce",
-    title: "Token-Optimized",
-    body: "FTS5 search returns just what\u2019s relevant, not everything. Smart retrieval means lower token costs.",
+    title: "Token-Optimized Retrieval",
+    body: "Not markdown dumps \u2014 an AI-optimized database. FTS5 + semantic search returns precisely what\u2019s relevant in 8ms. Your AI gets better context with fewer tokens.",
   },
   {
     icon: "\u25c8",

@@ -127,8 +127,8 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className="font-body text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-          Memstalker gives every AI model persistent memory. One knowledge base.
-          Every session. Zero copy-paste.
+          Not just memory — an AI-optimized knowledge base with self-learning loops.
+          Teach your AI. Let it teach you back. Every session, both sides get smarter. Model-free.
         </p>
 
         {/* Email waitlist form */}
