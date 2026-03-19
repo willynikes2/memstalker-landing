@@ -1,34 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import FaqJsonLd from "./FaqJsonLd";
 
 const faqs = [
-  {
-    question: "Is my data private?",
-    answer:
-      "Yes. AES-256 encryption at rest. You can export or delete all your data at any time. Self-hosted users have full control over their data.",
-  },
-  {
-    question: "Does it work with local models?",
-    answer:
-      "Planned for v2. Version 1 focuses on Claude, ChatGPT, and Gemini via MCP and API integrations.",
-  },
-  {
-    question: "Can I self-host forever?",
-    answer:
-      "Yes, forever. The open source version is fully featured. The hosted version adds convenience, not features behind a paywall.",
-  },
-  {
-    question: "How is this different from RAG?",
-    answer:
-      "Memstalker is writeable. Your AI doesn\u2019t just read \u2014 it updates its own memory after every session. It\u2019s a living knowledge base, not a static retrieval system.",
-  },
-  {
-    question: "What about built-in memory features?",
-    answer:
-      "Platform memory is one model, one platform. Memstalker works across ALL models and persists YOUR knowledge, not just conversation history.",
-  },
-];
+  { question: 'Is my data private?', answer: 'Yes. Encrypted at rest and in transit. We cannot access your data. When you cancel, we destroy it — you get a download window first.' },
+  { question: 'Can I self-host?', answer: 'Yes, forever. The open source version is fully featured. Self-host on any VPS or your own machine.' },
+  { question: 'Which AI tools does it work with?', answer: 'Claude, Codex, Gemini, and any MCP-compatible client. Connect via MCP protocol or REST API.' },
+  { question: 'How is this different from RAG?', answer: "Memstalker is writeable. Your AI doesn't just read — it updates its own memory with fixes, decisions, and lessons learned." },
+  { question: "What about Claude's built-in memory?", answer: "That's one model, one platform. Memstalker works across all models and persists context that built-in memory doesn't capture." },
+  { question: 'How long does setup take?', answer: 'Under 5 minutes. One npx command to start the server, one config entry to connect your AI tool.' },
+  { question: 'Can teams share a knowledge base?', answer: 'Yes. The Team plan supports up to 5 members sharing one knowledge base with role-based access.' },
+]
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -38,23 +21,18 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="section-padding bg-bg-elevated">
-      <div className="text-center">
-        <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">
-          faq
-        </span>
-        <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 text-text-primary tracking-tight">
-          Common questions.
-        </h2>
-      </div>
+    <section id="faq" className="px-6 md:px-16 lg:px-24 py-20">
+      <FaqJsonLd items={faqs} />
 
-      <div className="max-w-3xl mx-auto mt-12">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary tracking-tight mb-12">
+          Frequently asked questions.
+        </h2>
+
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`border-b border-border-subtle reveal reveal-delay-${
-              index + 1
-            }`}
+            className="border-b border-border-subtle"
           >
             <button
               onClick={() => toggle(index)}
@@ -64,7 +42,7 @@ export default function FAQ() {
               <span className="font-body font-medium text-text-primary pr-4">
                 {faq.question}
               </span>
-              <span className="text-accent text-xl flex-shrink-0">
+              <span className="text-text-secondary text-xl flex-shrink-0">
                 {openIndex === index ? "\u2212" : "+"}
               </span>
             </button>
