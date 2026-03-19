@@ -21,7 +21,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span className="font-display font-bold text-xl text-text-primary tracking-tight">
             Memstalker
           </span>
@@ -30,13 +30,13 @@ export default function Navbar() {
         {/* Links */}
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="#features"
+            href="/#features"
             className="text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
             Features
           </a>
           <a
-            href="#pricing"
+            href="/#pricing"
             className="text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
             Pricing
@@ -53,7 +53,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="#early-access"
+          href="/#early-access"
           className="bg-accent text-white font-body font-semibold text-sm px-4 py-2 rounded-lg hover:bg-accent-dark transition-all"
         >
           Get Early Access
