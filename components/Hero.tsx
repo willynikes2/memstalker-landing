@@ -28,7 +28,7 @@ export default function Hero() {
           {/* CTA buttons */}
           <div className="flex gap-3 mt-7">
             <a
-              href="/#pricing"
+              href="/#early-access"
               className="bg-white text-black font-semibold text-sm px-6 py-2.5 rounded-md hover:opacity-90 transition-opacity"
             >
               Start Free

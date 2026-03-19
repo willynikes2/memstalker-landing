@@ -33,7 +33,7 @@ const tiers: Tier[] = [
     ],
     cta: {
       label: "Start Free",
-      href: "#",
+      href: "/#early-access",
       style: "primary",
     },
   },
@@ -58,7 +58,7 @@ const tiers: Tier[] = [
     ],
     cta: {
       label: "Get Pro",
-      href: "#",
+      href: "/#early-access",
       style: "primary",
     },
   },
@@ -78,7 +78,7 @@ const tiers: Tier[] = [
     ],
     cta: {
       label: "Get Team",
-      href: "#",
+      href: "/#early-access",
       style: "secondary",
     },
   },
