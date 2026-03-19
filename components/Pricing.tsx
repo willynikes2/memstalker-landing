@@ -1,189 +1,169 @@
-const tiers = [
+type Tier = {
+  name: string
+  price: string
+  period?: string
+  originalPrice?: string
+  subtitle: string
+  highlight: boolean
+  badge?: string
+  features: string[]
+  cta: {
+    label: string
+    href: string
+    style: "primary" | "secondary"
+  }
+  mobileFirst?: boolean
+}
+
+const tiers: Tier[] = [
   {
     name: "Free",
-    price: "Self-hosted",
-    priceDetail: null,
+    price: "$0",
+    period: "/mo",
+    subtitle: "Try it. No credit card.",
     highlight: false,
-    badge: null,
     features: [
-      "Unlimited documents",
-      "Full-text search",
-      "All AI connectors",
+      "Managed hosting",
+      "100 docs",
+      "1K searches/mo",
+      "1 AI connector",
+      "FTS5",
       "Self-learning",
       "Community support",
     ],
     cta: {
-      label: "View on GitHub \u2192",
-      href: "https://github.com/willynikes2/knowledge-base-server",
-      style: "outline" as const,
-    },
-  },
-  {
-    name: "Starter",
-    price: "$12",
-    priceDetail: "/mo",
-    highlight: false,
-    badge: null,
-    features: [
-      "Hosted for you",
-      "500 documents",
-      "1 AI connector",
-      "Basic search",
-      "Email support",
-    ],
-    cta: {
-      label: "Get Early Access",
-      href: "#cta",
-      style: "outline" as const,
+      label: "Start Free",
+      href: "#",
+      style: "primary",
     },
   },
   {
     name: "Pro",
     price: "$12",
-    priceDetail: "/mo",
+    period: "/mo",
     originalPrice: "$25",
+    subtitle: "Locked in forever. 500 spots.",
     highlight: true,
-    badge: "Early Adopter \u2014 52% off",
-    lockedIn: true,
-    spotsLeft: true,
+    badge: "Early Adopter — 52% off",
+    mobileFirst: true,
     features: [
-      "Everything in Starter",
-      "Unlimited documents",
-      "ALL AI connectors",
-      "Smart search (FTS5 + semantic)",
-      "YouTube, GitHub, Twitter ingestion",
-      "Self-learning auto-updates",
+      "Everything in Free",
+      "Unlimited docs",
+      "Unlimited searches",
+      "All AI connectors",
+      "FTS5+Semantic",
+      "YouTube/GitHub/Twitter ingestion",
       "API access",
-      "Priority support",
+      "Email support",
     ],
     cta: {
-      label: "Get Early Access",
-      href: "#cta",
-      style: "primary" as const,
+      label: "Get Pro",
+      href: "#",
+      style: "primary",
     },
   },
   {
     name: "Team",
     price: "$50",
-    priceDetail: "/mo",
+    period: "/mo",
+    subtitle: "Shared memory for your team.",
     highlight: false,
-    badge: null,
     features: [
       "Everything in Pro",
-      "Up to 5 team members",
-      "Shared knowledge base",
+      "Up to 5 members",
+      "Shared KB",
       "Role-based access",
       "Team analytics",
       "Priority support",
     ],
     cta: {
-      label: "Get Early Access",
-      href: "#cta",
-      style: "outline" as const,
+      label: "Get Team",
+      href: "#",
+      style: "secondary",
     },
   },
-];
+  {
+    name: "Self-Hosted",
+    price: "Free",
+    subtitle: "Full features. Your infrastructure.",
+    highlight: false,
+    features: [
+      "Unlimited everything",
+      "All AI connectors",
+      "FTS5+Semantic",
+      "Self-learning",
+      "Full API",
+      "Community support",
+    ],
+    cta: {
+      label: "View on GitHub",
+      href: "https://github.com/willynikes2/knowledge-base-server",
+      style: "secondary",
+    },
+  },
+]
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="section-padding">
-      <div className="text-center">
-        <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">
-          pricing
-        </span>
-        <h2 className="font-display text-3xl md:text-[3.5rem] font-bold mt-4 tracking-tight leading-tight">
-          Start free. Scale when you&apos;re ready.
-        </h2>
-        <p className="text-text-secondary mt-4">No credit card required.</p>
-      </div>
+    <section id="pricing" className="px-6 md:px-16 lg:px-24 py-20">
+      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary mb-12">
+        Start free. Scale when you need to.
+      </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1200px] mx-auto mt-16">
-        {tiers.map((tier, i) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {tiers.map((tier) => (
           <div
             key={tier.name}
-            className={`relative p-8 rounded-xl reveal reveal-delay-${i + 1} ${
-              tier.highlight
-                ? "bg-white border-2 border-accent shadow-lg shadow-accent/10"
-                : "bg-white border border-border-subtle shadow-sm"
-            }`}
+            className={`bg-bg-elevated border border-border-subtle rounded-xl p-6 flex flex-col${
+              tier.mobileFirst ? " order-first lg:order-none" : ""
+            }${tier.highlight ? " border-accent/30 ring-1 ring-accent/20" : ""}`}
           >
             {tier.badge && (
-              <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+              <span className="bg-accent/10 text-accent-pale text-xs px-2.5 py-0.5 rounded-full inline-block mb-3">
                 {tier.badge}
               </span>
             )}
 
-            <h3 className="font-display font-semibold text-lg text-text-primary">{tier.name}</h3>
+            <h3 className="font-semibold text-text-primary mb-1">{tier.name}</h3>
+            <p className="text-text-muted text-xs mb-4">{tier.subtitle}</p>
 
-            <div className="mt-2">
-              {tier.priceDetail ? (
-                <div>
-                  {"originalPrice" in tier && tier.originalPrice && (
-                    <span className="text-text-tertiary text-sm line-through mr-2">
-                      {tier.originalPrice}/mo
-                    </span>
-                  )}
-                  <p>
-                    <span
-                      className={`text-3xl font-display font-bold ${
-                        tier.highlight ? "text-accent" : "text-text-primary"
-                      }`}
-                    >
-                      {tier.price}
-                    </span>
-                    <span className="text-text-secondary text-sm">
-                      {tier.priceDetail}
-                    </span>
-                  </p>
-                  {"lockedIn" in tier && tier.lockedIn && (
-                    <p className="text-accent text-xs font-mono mt-1">
-                      Locked in forever
-                    </p>
-                  )}
-                  {"spotsLeft" in tier && tier.spotsLeft && (
-                    <p className="text-amber-600 text-xs font-mono mt-1">
-                      Only 500 spots
-                    </p>
-                  )}
-                </div>
-              ) : (
-                <p className="text-2xl font-display font-bold text-text-primary">{tier.price}</p>
+            <div className="mb-6">
+              {tier.originalPrice && (
+                <span className="line-through text-text-muted text-sm mr-2">{tier.originalPrice}/mo</span>
               )}
+              <span className="text-4xl font-extrabold text-text-primary">{tier.price}</span>
+              {tier.period && <span className="text-text-muted text-sm">{tier.period}</span>}
             </div>
 
-            <div className="border-t border-border-subtle my-6" />
-
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 flex-1 mb-6">
               {tier.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="text-sm text-text-secondary flex items-start gap-2"
-                >
-                  <span className="text-accent">&#10003;</span>
-                  <span>{feature}</span>
+                <li key={feature} className="flex items-start gap-2">
+                  <span className="text-accent mt-0.5">✓</span>
+                  <span className="text-sm text-text-secondary">{feature}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8">
-              {tier.cta.style === "primary" ? (
-                <a href={tier.cta.href} className="btn-primary w-full block text-center">
-                  {tier.cta.label}
-                </a>
-              ) : (
-                <a
-                  href={tier.cta.href}
-                  className="block w-full text-center border border-border-subtle hover:border-border-hover text-text-primary text-sm font-medium py-2.5 px-4 rounded-lg transition-colors"
-                  target={tier.cta.label.includes("GitHub") ? "_blank" : undefined}
-                  rel={tier.cta.label.includes("GitHub") ? "noopener noreferrer" : undefined}
-                >
-                  {tier.cta.label}
-                </a>
-              )}
-            </div>
+            {tier.cta.style === "primary" ? (
+              <a
+                href={tier.cta.href}
+                className="bg-white text-black font-semibold text-sm w-full py-2.5 rounded-md text-center block hover:opacity-90 transition-opacity"
+              >
+                {tier.cta.label}
+              </a>
+            ) : (
+              <a
+                href={tier.cta.href}
+                className="border border-border-hover text-text-tertiary font-semibold text-sm w-full py-2.5 rounded-md text-center block hover:border-text-muted transition-colors"
+                target={tier.cta.href.startsWith("http") ? "_blank" : undefined}
+                rel={tier.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
+                {tier.cta.label}
+              </a>
+            )}
           </div>
         ))}
       </div>
     </section>
-  );
+  )
 }
