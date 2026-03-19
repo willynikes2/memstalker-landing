@@ -1,127 +1,113 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
-export const alt = "Persistent memory for AI agents | Memstalker";
-export const size = { width: 1200, height: 630 };
+export const size = {
+  width: 1200,
+  height: 630,
+};
+
 export const contentType = "image/png";
 
-export default async function Image() {
+export default function OpenGraphImage() {
   return new ImageResponse(
     (
       <div
         style={{
-          background: "#0c0c0c",
-          width: "100%",
           height: "100%",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          fontFamily: "Inter, system-ui, sans-serif",
-          position: "relative",
+          justifyContent: "space-between",
+          background:
+            "radial-gradient(circle at top left, #f3dfc1 0%, #f7efe2 35%, #f4f1ea 100%)",
+          padding: "64px",
+          color: "#111827",
+          fontFamily:
+            "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
         }}
       >
-        {/* Subtle grid background */}
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(rgba(99,102,241,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.05) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
             display: "flex",
+            alignItems: "center",
+            gap: "18px",
           }}
-        />
-
-        {/* Crosshair icon */}
-        <svg
-          width="80"
-          height="80"
-          viewBox="0 0 64 64"
-          fill="none"
-          style={{ marginBottom: 24 }}
         >
-          <path d="M32 29L35 32L32 35L29 32Z" fill="#6366f1" />
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M32 25L28 21H36L32 25ZM32 39L28 43H36L32 39ZM25 32L21 28V36L25 32ZM39 32L43 28V36L39 32ZM8 8H20V12H12V20H8V8ZM56 8H44V12H52V20H56V8ZM8 56H20V52H12V44H8V56ZM56 56H44V52H52V44H56V56Z"
-            fill="white"
-          />
-        </svg>
+          <div
+            style={{
+              width: "68px",
+              height: "68px",
+              borderRadius: "20px",
+              background: "#111827",
+              color: "#f8fafc",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "34px",
+              fontWeight: 700,
+            }}
+          >
+            M
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+            }}
+          >
+            <div style={{ fontSize: "24px", letterSpacing: "0.12em" }}>
+              MEMSTALKER
+            </div>
+            <div style={{ fontSize: "20px", color: "#4b5563" }}>
+              Persistent memory for AI agents
+            </div>
+          </div>
+        </div>
 
-        {/* Title */}
         <div
           style={{
-            fontSize: 64,
-            fontWeight: 800,
-            color: "#ffffff",
-            letterSpacing: "-0.02em",
-            lineHeight: 1.1,
-            textAlign: "center",
             display: "flex",
             flexDirection: "column",
+            gap: "20px",
+            maxWidth: "900px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "68px",
+              lineHeight: 1.02,
+              fontWeight: 700,
+              letterSpacing: "-0.04em",
+            }}
+          >
+            Shared memory for Claude, Codex, and Gemini
+          </div>
+          <div
+            style={{
+              fontSize: "30px",
+              lineHeight: 1.3,
+              color: "#374151",
+            }}
+          >
+            Give every agent one knowledge base for decisions, fixes, and codebase
+            context that persists across sessions.
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
             alignItems: "center",
+            fontSize: "24px",
+            color: "#4b5563",
           }}
         >
-          <span>Persistent memory for AI agents</span>
-        </div>
-
-        {/* Subtitle */}
-        <div
-          style={{
-            fontSize: 28,
-            color: "#999999",
-            marginTop: 16,
-            textAlign: "center",
-            display: "flex",
-          }}
-        >
-          Connect Claude, Codex, and Gemini to one shared knowledge base
-        </div>
-
-        {/* Feature pills */}
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            marginTop: 32,
-          }}
-        >
-          {["Claude", "ChatGPT", "Gemini", "Cursor", "Windsurf"].map(
-            (name) => (
-              <div
-                key={name}
-                style={{
-                  background: "rgba(99,102,241,0.15)",
-                  border: "1px solid rgba(99,102,241,0.3)",
-                  borderRadius: 999,
-                  padding: "8px 20px",
-                  fontSize: 18,
-                  color: "#a5b4fc",
-                  display: "flex",
-                }}
-              >
-                {name}
-              </div>
-            )
-          )}
-        </div>
-
-        {/* URL */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 32,
-            fontSize: 20,
-            color: "#6366f1",
-            display: "flex",
-          }}
-        >
-          memstalker.com
+          <div>memstalker.com</div>
+          <div>Open source + hosted sync</div>
         </div>
       </div>
     ),
-    { ...size }
+    size,
   );
 }

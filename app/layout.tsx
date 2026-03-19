@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     siteName: "Memstalker",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Memstalker social preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -34,6 +42,7 @@ export const metadata: Metadata = {
     description:
       "Memstalker gives Claude, Codex, and Gemini a shared knowledge base so they remember your codebase, fixes, and decisions across sessions.",
     creator: "@ShawnDanCap",
+    images: ["/twitter-image"],
   },
   metadataBase: new URL("https://memstalker.com"),
   alternates: {
