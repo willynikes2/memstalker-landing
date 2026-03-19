@@ -114,12 +114,12 @@ export default function Pricing() {
         {tiers.map((tier) => (
           <div
             key={tier.name}
-            className={`bg-bg-elevated border border-border-subtle rounded-xl p-6 flex flex-col${
+            className={`bg-bg-elevated border rounded-xl p-6 flex flex-col${
               tier.mobileFirst ? " order-first lg:order-none" : ""
-            }${tier.highlight ? " border-accent/30 ring-1 ring-accent/20" : ""}`}
+            }${tier.highlight ? " border-accent/40 ring-1 ring-accent/30 shadow-[0_0_24px_rgba(99,102,241,0.12)]" : " border-border-subtle"}`}
           >
             {tier.badge && (
-              <span className="bg-accent/10 text-accent-pale text-xs px-2.5 py-0.5 rounded-full inline-block mb-3">
+              <span className="bg-accent/15 text-accent-pale text-xs font-medium px-2.5 py-0.5 rounded-full inline-block mb-3">
                 {tier.badge}
               </span>
             )}

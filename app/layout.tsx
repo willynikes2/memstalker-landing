@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "800"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Persistent memory for AI agents | Memstalker",
@@ -47,7 +33,7 @@ export const metadata: Metadata = {
     title: "Persistent memory for AI agents | Memstalker",
     description:
       "Memstalker gives Claude, Codex, and Gemini a shared knowledge base so they remember your codebase, fixes, and decisions across sessions.",
-    creator: "@willynikes",
+    creator: "@ShawnDanCap",
   },
   metadataBase: new URL("https://memstalker.com"),
   alternates: {
@@ -72,10 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jetbrains.variable}`}
-    >
+    <html lang="en">
       <body className="font-body bg-bg text-text-primary antialiased">
         <script
           type="application/ld+json"

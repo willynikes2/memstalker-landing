@@ -50,10 +50,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          <a
-            href="https://github.com/willynikes2/knowledge-base-server#readme"
-            className={linkClass}
-          >
+          <a href="/docs" className={linkClass}>
             Docs
           </a>
           <a href="/#pricing" className={linkClass}>
@@ -106,11 +103,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-bg/95 backdrop-blur-sm border-t border-border-subtle px-6 py-6 flex flex-col gap-4">
-          <a
-            href="https://github.com/willynikes2/knowledge-base-server#readme"
-            className={linkClass}
-            onClick={() => setMobileOpen(false)}
-          >
+          <a href="/docs" className={linkClass} onClick={() => setMobileOpen(false)}>
             Docs
           </a>
           <a

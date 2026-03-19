@@ -12,7 +12,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://x.com/willynikes"
+            href="https://x.com/ShawnDanCap"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted text-sm hover:text-text-secondary transition-colors"
@@ -36,6 +36,12 @@ export default function Footer() {
             className="text-text-muted text-sm hover:text-text-secondary transition-colors"
           >
             Terms
+          </a>
+          <a
+            href="mailto:support@memstalker.com"
+            className="text-text-muted text-sm hover:text-text-secondary transition-colors"
+          >
+            Contact
           </a>
         </div>
         <span className="text-text-muted text-xs">Built by Shawn Daniel</span>

@@ -7,7 +7,7 @@ export default function FinalCTA() {
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary">
           Give your AI agents a real memory.
         </h2>
-        <p className="text-text-tertiary text-sm mt-3 mb-8">No credit card required. Free tier available.</p>
+        <p className="text-text-secondary text-sm mt-3 mb-8">No credit card required. Free tier available.</p>
         <WaitlistForm source="final-cta" />
       </div>
     </section>

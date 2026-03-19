@@ -10,8 +10,8 @@ export default function Hero() {
       <div className="px-6 md:px-16 lg:px-24 pt-32 pb-20">
         <div className="max-w-[640px]">
           {/* Reddit validation badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-bg-elevated border border-border-subtle rounded-full mb-6">
-            <span className="text-text-muted text-xs">As seen on r/ClaudeAI</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-accent/10 border border-accent/20 rounded-full mb-6">
+            <span className="text-text-secondary text-xs">As seen on r/ClaudeAI</span>
             <span className="text-accent-pale text-xs font-semibold">200K+ views</span>
           </div>
 
