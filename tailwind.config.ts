@@ -9,23 +9,25 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#ffffff",
-          elevated: "#f9fafb",
-          surface: "#f3f4f6",
+          DEFAULT: '#0c0c0c',
+          surface: '#111111',
+          elevated: '#161620',
         },
         text: {
-          primary: "#111827",
-          secondary: "#4b5563",
-          tertiary: "#9ca3af",
+          primary: '#ffffff',
+          secondary: '#999999',
+          tertiary: '#555555',
+          muted: '#444444',
         },
         accent: {
-          DEFAULT: "#6366f1",
-          light: "#eef2ff",
-          dark: "#4f46e5",
+          DEFAULT: '#6366f1',
+          light: '#818cf8',
+          pale: '#a5b4fc',
+          dark: '#4f46e5',
         },
         border: {
-          subtle: "#e5e7eb",
-          hover: "#d1d5db",
+          subtle: '#1e1e2e',
+          hover: '#333333',
         },
       },
       fontFamily: {
