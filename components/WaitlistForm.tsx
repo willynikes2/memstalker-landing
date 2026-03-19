@@ -16,7 +16,7 @@ export default function WaitlistForm({
   source = "landing",
   className = "",
   inputClassName = "",
-  buttonClassName = "btn-primary whitespace-nowrap",
+  buttonClassName = "bg-white text-black font-semibold hover:opacity-90 transition-opacity whitespace-nowrap px-6 py-3 rounded-md text-sm",
   compact = false,
 }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
@@ -64,9 +64,9 @@ export default function WaitlistForm({
     return (
       <div className={`text-center ${className}`}>
         <div className="inline-flex items-center gap-2 bg-accent-light border border-accent/20 rounded-lg px-6 py-4">
-          <span className="text-accent text-xl">&#10003;</span>
+          <span className="text-accent-pale text-xl">&#10003;</span>
           <div className="text-left">
-            <p className="text-accent font-medium text-sm">{message}</p>
+            <p className="text-accent-pale font-medium text-sm">{message}</p>
             {position && (
               <p className="text-text-secondary text-xs mt-1">
                 You&apos;re #{position} on the waitlist
@@ -104,7 +104,7 @@ export default function WaitlistForm({
           disabled={status === "loading"}
           className={
             inputClassName ||
-            "w-full sm:flex-1 bg-white border border-border-subtle rounded-lg px-4 py-3 text-text-primary font-body text-sm placeholder:text-text-tertiary focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors disabled:opacity-50"
+            "w-full sm:flex-1 bg-bg-elevated border border-border-subtle rounded-lg px-4 py-3 text-text-primary font-body text-sm placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors disabled:opacity-50"
           }
         />
         <button
@@ -118,7 +118,7 @@ export default function WaitlistForm({
               Joining...
             </span>
           ) : (
-            "Get Early Access"
+            "Start Free"
           )}
         </button>
       </form>
