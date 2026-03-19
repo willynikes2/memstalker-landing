@@ -1,108 +1,59 @@
-"use client";
+import Terminal from "@/components/Terminal";
 
-interface StepProps {
-  number: string;
-  title: string;
-  body: string;
-  codeLines: { text: string; className: string }[];
-  delay: number;
-}
+const steps = [
+  {
+    number: '01',
+    title: 'Connect',
+    description: 'Add memstalker to your MCP config. One command.',
+    code: `// claude_desktop_config.json
+{
+  "mcpServers": {
+    "memstalker": {
+      "command": "npx",
+      "args": ["knowledge-base-server", "mcp"]
+    }
+  }
+}`
+  },
+  {
+    number: '02',
+    title: 'Capture',
+    description: 'Your AI saves what it learns — fixes, decisions, context.',
+    code: `> kb_capture_fix "Docker networking"
+✓ Fix captured: bridge network DNS resolution
 
-const STEPS: StepProps[] = [
-  {
-    number: "01",
-    title: "Connect your sources",
-    body: "Link your Obsidian vault, upload files, or connect GitHub. Memstalker indexes everything with AI-powered classification.",
-    codeLines: [
-      { text: "memstalker ingest ./obsidian-vault", className: "text-text-primary" },
-      { text: "\u2713 847 documents indexed", className: "text-accent" },
-      { text: "\u2713 AI summaries generated", className: "text-accent" },
-      { text: "\u2713 Full-text search ready", className: "text-accent" },
-    ],
-    delay: 1,
+> kb_capture_session
+✓ Session saved: 3 findings, 2 fixes, 1 decision`
   },
   {
-    number: "02",
-    title: "Connect your AI models",
-    body: "One command per model. Claude Code, ChatGPT, Gemini \u2014 all reading from the same brain.",
-    codeLines: [
-      { text: "# Claude Code", className: "text-text-tertiary" },
-      { text: "claude mcp add memstalker -- npx memstalker-mcp", className: "text-text-primary" },
-      { text: "", className: "" },
-      { text: "# ChatGPT \u2014 import Custom GPT Action", className: "text-text-tertiary" },
-      { text: "# Gemini \u2014 add MCP config", className: "text-text-tertiary" },
-    ],
-    delay: 2,
-  },
-  {
-    number: "03",
-    title: "Build with memory",
-    body: "Your AI agents now share context. What Claude learns, ChatGPT remembers. Across every session, every model.",
-    codeLines: [
-      { text: '$ claude "continue the API refactor from yesterday"', className: "text-text-primary" },
-      { text: "\u2713 Found 3 relevant sessions", className: "text-accent" },
-      { text: "\u2713 Resuming from commit a3f8c2d...", className: "text-accent" },
-    ],
-    delay: 3,
-  },
+    number: '03',
+    title: 'Retrieve',
+    description: 'Context comes back instantly. Every session starts smarter.',
+    code: `> kb_search "docker networking fix"
+→ 8ms · 3 results
+
+1. Fix: bridge network DNS resolution
+2. Session: Docker compose networking debug
+3. Lesson: always use custom networks`
+  }
 ];
-
-function Step({ number, title, body, codeLines, delay }: StepProps) {
-  return (
-    <div className={`reveal reveal-delay-${delay} flex gap-8 md:gap-12`}>
-      {/* Step number */}
-      <div className="flex-shrink-0">
-        <span className="font-display text-6xl font-bold text-accent/15 select-none">
-          {number}
-        </span>
-      </div>
-
-      {/* Step content */}
-      <div className="flex-1 min-w-0">
-        <h3 className="font-display text-xl font-semibold text-text-primary">
-          {title}
-        </h3>
-        <p className="text-text-secondary mt-2 leading-relaxed">{body}</p>
-
-        <div className="bg-bg-elevated border border-border-subtle rounded-lg p-4 mt-4 font-mono text-sm overflow-x-auto">
-          {codeLines.map((line, i) =>
-            line.text === "" ? (
-              <div key={i} className="h-4" />
-            ) : (
-              <p key={i} className={line.className}>
-                {line.text}
-              </p>
-            )
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="section-padding relative">
-      {/* Section header */}
-      <div className="text-center reveal">
-        <span className="text-accent font-mono text-xs uppercase tracking-[0.2em]">
-          getting started
-        </span>
-        <h2 className="font-display text-3xl md:text-[3.5rem] font-bold text-text-primary mt-4 tracking-tight leading-tight">
-          Three commands. Permanent memory.
-        </h2>
-      </div>
-
-      {/* Steps */}
-      <div className="relative max-w-4xl mx-auto flex flex-col gap-16 mt-20">
-        {/* Vertical connecting line */}
-        <div
-          className="absolute w-px bg-border-subtle hidden md:block"
-          style={{ left: "2.25rem", top: "1rem", bottom: "1rem" }}
-        />
-
-        {STEPS.map((step) => (
-          <Step key={step.number} {...step} />
+    <section id="how-it-works" className="px-6 md:px-16 lg:px-24 py-20">
+      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary mb-16">
+        Three commands. Permanent memory.
+      </h2>
+      <div className="space-y-16 max-w-3xl">
+        {steps.map((step) => (
+          <div key={step.number}>
+            <span className="font-mono text-xs text-accent-pale">{step.number}</span>
+            <h3 className="text-2xl font-bold text-text-primary mt-1">{step.title}</h3>
+            <p className="text-text-secondary mt-2 mb-4">{step.description}</p>
+            <Terminal>
+              <pre className="text-sm text-text-secondary whitespace-pre-wrap">{step.code}</pre>
+            </Terminal>
+          </div>
         ))}
       </div>
     </section>
