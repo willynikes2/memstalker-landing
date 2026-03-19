@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Memstalker — Your AI Never Forgets";
+export const alt = "Persistent memory for AI agents | Memstalker";
 export const size = { width: 1200, height: 675 };
 export const contentType = "image/png";
 
@@ -10,7 +10,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: "#0a0a0a",
+          background: "#0c0c0c",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -52,24 +52,24 @@ export default async function Image() {
           style={{
             fontSize: 56,
             fontWeight: 800,
-            color: "white",
+            color: "#ffffff",
             letterSpacing: "-0.02em",
             textAlign: "center",
             display: "flex",
           }}
         >
-          Your AI Never Forgets
+          Persistent memory for AI agents
         </div>
 
         <div
           style={{
             fontSize: 26,
-            color: "#a1a1aa",
+            color: "#999999",
             marginTop: 16,
             display: "flex",
           }}
         >
-          Persistent memory for Claude, ChatGPT, Gemini, and more
+          Connect Claude, Codex, and Gemini to one shared knowledge base
         </div>
 
         <div

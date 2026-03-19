@@ -5,6 +5,7 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "800"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -16,9 +17,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Memstalker — Persistent Memory for AI Agents",
+  title: "Persistent memory for AI agents | Memstalker",
   description:
-    "Give Claude, ChatGPT, and Gemini real memory. One knowledge base every AI model can read from and write to. Open source core.",
+    "Memstalker gives Claude, Codex, and Gemini a shared knowledge base so they remember your codebase, fixes, and decisions across sessions.",
   keywords: [
     "AI memory",
     "persistent memory",
@@ -33,9 +34,9 @@ export const metadata: Metadata = {
     "developer tools",
   ],
   openGraph: {
-    title: "Memstalker — Your AI Never Forgets",
+    title: "Persistent memory for AI agents | Memstalker",
     description:
-      "Persistent memory for AI agents. One brain, every model, zero copy-paste. 8ms retrieval, self-learning loops, open source.",
+      "Memstalker gives Claude, Codex, and Gemini a shared knowledge base so they remember your codebase, fixes, and decisions across sessions.",
     url: "https://memstalker.com",
     siteName: "Memstalker",
     type: "website",
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Memstalker — Your AI Never Forgets",
+    title: "Persistent memory for AI agents | Memstalker",
     description:
-      "Persistent memory for AI agents. One brain, every model, zero copy-paste. 8ms retrieval, self-learning loops, open source.",
+      "Memstalker gives Claude, Codex, and Gemini a shared knowledge base so they remember your codebase, fixes, and decisions across sessions.",
     creator: "@willynikes",
   },
   metadataBase: new URL("https://memstalker.com"),
